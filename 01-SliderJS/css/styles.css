@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides img {
+    width: 50%;
+    height: 50%;
+}
+
+.slides {
+    text-align: center;
+    position: relative;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 15pt;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-align: center;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+
+}
+
+.next button {
+    font-size: 30px;
+    margin: 20px;
+    outline: none;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.previous button {
+    margin: 20px;
+    background-color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+img {
+    border: 2.2px rgb(0, 81, 255) solid;
+}
