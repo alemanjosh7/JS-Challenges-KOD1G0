@@ -32,11 +32,11 @@
                             class="modal-open rounded-full self-center sm:mt-16 sm:w-1/3 px-4 py-2 bg-blue-300 text-blue-800 mt-4 mb-4 hover:bg-blue-400 hover:text-white">Enter
                             your credit card</button>
                         <div
-                            class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+                            class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center w-min-full h-min-full">
                             <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
                             <div
-                                class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                                class="modal-container bg-white w-11/12 md:max-w-full h-11/12 md:max-h-full  mx-auto rounded shadow-lg z-50 overflow-y-auto">
 
                                 <div
                                     class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
@@ -50,10 +50,10 @@
                                 </div>
 
                                 <!-- Add margin if you want to see some of the overlay behind the modal-->
-                                <div class="modal-content py-4 text-left px-6">
+                                <div class="modal-content py-4 text-left px-6 ">
                                     <!--Title-->
                                     <div class="flex justify-between items-center pb-3">
-                                        <p class="text-2xl font-bold">f Modal!</p>
+                                        <p class="text-2xl font-bold">Credit Card Verification</p>
                                         <div class="modal-close cursor-pointer z-50">
                                             <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg"
                                                 width="18" height="18" viewBox="0 0 18 18">
@@ -66,25 +66,27 @@
 
                                     <!--Body-->
                                     <div
-                                        class="flex flex-col items-center bg-blue-100 font-lato w-90 max-w-screen-lg px-5 py-10 m-auto">
-                                        <section class="card" id="card">
-                                            <div class="front">
-                                                <div class="brand-logo">
+                                        class="flex flex-col min-w-full max-h-full items-center bg-blue-100 font-lato px-5 py-10 m-auto text-left">
+                                        <section
+                                            class="card xs:w-11/12 sm:w-8/12 justify-items-stretch lg:w-5/12 h-12/12 relative text-white"
+                                            id="card">
+                                            <div class="front w-100">
+                                                <div class="brand-logo p-0 m-0 text-right flex flex-col items-end">
                                                     <img src="../src/images/visa.png" alt="">
                                                 </div>
-                                                <img src="../src/images/chip-tarjeta.png" class="chip" alt="">
+                                                <img src="../src/images/chip-tarjeta.png" class="chip mb-0.5" alt="">
                                                 <div class="data">
                                                     <div class="group" id="number">
-                                                        <p class="label">Número Tarjeta</p>
+                                                        <p class="label">Credit Card Number</p>
                                                         <p class="number">#### #### #### ####</p>
                                                     </div>
-                                                    <div class="flex">
+                                                    <div class="flex justify-between mt-1">
                                                         <div class="group" id="name">
-                                                            <p class="label">Nombre Tarjeta</p>
+                                                            <p class="label">Credit Card Name</p>
                                                             <p class="name">Josué Alemán</p>
                                                         </div>
                                                         <div class="group">
-                                                            <p class="label">Expiración</p>
+                                                            <p class="label">Expiration</p>
                                                             <p class="expiration"><span class="month">MM</span> / <span
                                                                     class="year">AA</span></p>
                                                         </div>

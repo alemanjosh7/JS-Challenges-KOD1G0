@@ -13988,16 +13988,8 @@ video {
   max-width: 1536px;
 }
 
-.min-h-0{
-  min-height: 0px;
-}
-
-.min-h-full{
-  min-height: 100%;
-}
-
-.min-h-screen{
-  min-height: 100vh;
+.min-h-extra{
+  min-height: 315px;
 }
 
 .min-w-0{
@@ -31190,6 +31182,70 @@ body.modal-active {
   overflow-y: visible !important;
 }
 
+.card {
+  transition: .3s ease all;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.card.active {
+  transform: rotateY(180deg);
+}
+
+.card>div {
+  padding: 30px;
+  border-radius: 15px;
+  min-height: 315px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 10px 0 rgba(90, 116, 148);
+}
+
+.card .front {
+  width: 100%;
+  background: url(../src/images/bg-tarjeta-02.jpg);
+  background-size: cover;
+}
+
+.front .brand-logo {
+  text-align: right;
+  min-height: 50px;
+}
+
+.front .brand-logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 80px;
+}
+
+.front .chip {
+  width: 100%;
+  max-width: 50px;
+}
+
+.front .group .label {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+.front .group .number, .front .group .name, .front .group .expiration{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -44622,16 +44678,8 @@ body.modal-active {
     max-width: 1536px;
   }
 
-  .sm\:min-h-0{
-    min-height: 0px;
-  }
-
-  .sm\:min-h-full{
-    min-height: 100%;
-  }
-
-  .sm\:min-h-screen{
-    min-height: 100vh;
+  .sm\:min-h-extra{
+    min-height: 315px;
   }
 
   .sm\:min-w-0{
@@ -75165,16 +75213,8 @@ body.modal-active {
     max-width: 1536px;
   }
 
-  .md\:min-h-0{
-    min-height: 0px;
-  }
-
-  .md\:min-h-full{
-    min-height: 100%;
-  }
-
-  .md\:min-h-screen{
-    min-height: 100vh;
+  .md\:min-h-extra{
+    min-height: 315px;
   }
 
   .md\:min-w-0{
@@ -105708,16 +105748,8 @@ body.modal-active {
     max-width: 1536px;
   }
 
-  .lg\:min-h-0{
-    min-height: 0px;
-  }
-
-  .lg\:min-h-full{
-    min-height: 100%;
-  }
-
-  .lg\:min-h-screen{
-    min-height: 100vh;
+  .lg\:min-h-extra{
+    min-height: 315px;
   }
 
   .lg\:min-w-0{
@@ -136251,16 +136283,8 @@ body.modal-active {
     max-width: 1536px;
   }
 
-  .xl\:min-h-0{
-    min-height: 0px;
-  }
-
-  .xl\:min-h-full{
-    min-height: 100%;
-  }
-
-  .xl\:min-h-screen{
-    min-height: 100vh;
+  .xl\:min-h-extra{
+    min-height: 315px;
   }
 
   .xl\:min-w-0{
@@ -166794,16 +166818,8 @@ body.modal-active {
     max-width: 1536px;
   }
 
-  .\32xl\:min-h-0{
-    min-height: 0px;
-  }
-
-  .\32xl\:min-h-full{
-    min-height: 100%;
-  }
-
-  .\32xl\:min-h-screen{
-    min-height: 100vh;
+  .\32xl\:min-h-extra{
+    min-height: 315px;
   }
 
   .\32xl\:min-w-0{
@@ -183904,3 +183920,6 @@ body.modal-active {
             animation: bounce 1s infinite;
   }
 }
+
+
+
