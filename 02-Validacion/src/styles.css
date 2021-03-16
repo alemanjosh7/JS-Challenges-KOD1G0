@@ -23,7 +23,6 @@ body.modal-active {
     transition: .3s ease all;
     transform: rotateY(0deg);
     transform-style: preserve-3d;
-    backface-visibility: hidden;
     cursor: pointer;
     z-index: 2;
 }
@@ -42,9 +41,11 @@ body.modal-active {
     box-shadow: 0 10px 10px 0 rgba(90, 116, 148);
 }
 
+/*Front Card*/
+
 .card .front {
     width: 100%;
-    background: url(../src/images/bg-tarjeta-02.jpg);
+    background: url(../src/images/bg-tarjeta-03.jpg);
     background-size: cover;
 }
 
@@ -71,9 +72,111 @@ body.modal-active {
 
 .front .group .number,
 .front .group .name,
-.front .group .expiration{
+.front .group .expiration {
     @apply text-white text-xl uppercase
 }
 
+.back {
+    background: url(../src/images/bg-tarjeta-03.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
 
+.back .data {
+    @apply mt-14 flex justify-between
+}
 
+.back .data p {
+    @apply mb-0.5
+}
+
+.back .data #sign .sign {
+    background: repeating-linear-gradient(skyblue 0, skyblue 4px, orange 4px, orange 8px);
+}
+
+.back .data #sign .sign {
+    line-height: 33px;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    color: #000;
+    font-size: 30px;
+    padding: 0;
+    text-transform: capitalize;
+}
+
+.container-btn .open-form-btn {
+    box-shadow: 5px 4px 8px rgba(24, 56, 182, 0.4);
+}
+
+.container-btn .open-form-btn.active {
+    transform: rotate(45deg);
+}
+
+.flexbox {
+    @apply flex justify-between
+}
+
+.card-form {
+    padding: 150px 60px 60px 60px;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    @apply mb-5
+}
+
+.card-form.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.card-form label {
+    display: block;
+    color: #7d8994;
+    @apply my-1.5 text-sm
+}
+
+.card-form input,
+.card-form select,
+.btn-send {
+    border: 2px solid #CED6E0;
+    padding: 5px 12px;
+    @apply text-base h-10 w-full transition-all my-1.5 rounded
+}
+
+.card-form input:hover,
+.card-form select:hover {
+    border: 2px solid #93BDED;
+}
+
+.card-form input:focus,
+.card-form select:focus {
+    outline: rgb(4, 4, 4);
+    box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, .3);
+}
+
+.card-form input {
+    @apply uppercase
+}
+
+.card-form .group-select {
+    @apply w-full mr-1 relative
+}
+
+.card-form select {
+    -webkit-appearance: none;
+}
+
+.card-form .group-select i {
+    @apply absolute right-4 top-5 transition-all text-blue-600
+}
+
+.card-form .group-select:hover i {
+    @apply text-blue-900
+}
+
+.card-form .btn-send{
+    @apply border-none p-1 text-base text-white bg-blue-600 shadow-xl cursor-pointer
+}
+
+.card-form .btn-send:hover{
+    @apply bg-blue-900
+}
