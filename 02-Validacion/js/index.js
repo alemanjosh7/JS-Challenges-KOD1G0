@@ -159,7 +159,15 @@ form.btnSubmit.addEventListener("click", (e) => {
   ) {
     toggleModal();
     e.preventDefault();
-    Swal.fire("Congratulations", "Your credit card is correct!", "success");
+    let s = creditNumber.textContent;
+    Swal.fire(
+      "Congratulations",
+      `Your credit card: #### #### #### ${s[15] +
+        s[16] +
+        s[17] +
+        s[18]} is correct!`,
+      "success"
+    );
   } else {
     Swal.fire("Oops...", "Something went wrong!", "error");
     e.preventDefault();
