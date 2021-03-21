@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./tailwind.css">
+</head>
+
+<body class="flexbox bg-gradient-to-r from-blue-400 to-blue-700">
+    <div class="container p-4 flex justify-center">
+        <div class="w-1/4">
+            <div class="md:h-6/12 flex justify-center flex-col rounded-xl p-4 shadow-xl bg-white">
+                <div class="title-card text-center">
+                    <p>To Do</p>
+                </div>
+                <form id="task-form">
+                    <div class="form-group">
+                        <p class="label">Task Title</p>
+                        <input type="text" id="task-title" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <p class="label">Scheduled Time</p>
+                        <input type="datetime-local" id="time-task" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <p class="label">Priority</p>
+                        <div class="priority-options flexbox">
+                            <div class="first-option">
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">High</label>
+                            </div>
+                            <div class="second-option">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Normal</label>
+                            </div>
+                            <div class="third-option">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Low</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p class="label">Description</p>
+                        <textarea id="task-description" rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="send-task w-full flex justify-center">
+                        <button type="submit" class="btn-send" id="btnSave">Save</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDpTsS-yJxrudYN_ALHqwOCQpJgROtFpS4",
+            authDomain: "todoapp-k0d1g0.firebaseapp.com",
+            projectId: "todoapp-k0d1g0",
+            storageBucket: "todoapp-k0d1g0.appspot.com",
+            messagingSenderId: "206752650757",
+            appId: "1:206752650757:web:c4ac295d6f3f29d917ee6c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

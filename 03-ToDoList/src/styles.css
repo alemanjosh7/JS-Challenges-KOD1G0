@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flexbox {
+    @apply flex justify-between
+}
+
+#task-form .form-group {
+    @apply w-full mt-3
+}
+
+.form-group input[type=text],
+.form-group textarea {
+    @apply border-2 border-black rounded mt-3 border-opacity-50 hover:border-blue-400 outline-none
+}
+
+.form-control {
+    @apply w-full
+}
+
+button .btn-send {
+    @apply bg-blue-600 h-12 w-full transition-all my-1.5 rounded
+}
