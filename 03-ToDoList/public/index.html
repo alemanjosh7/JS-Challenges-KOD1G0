@@ -10,52 +10,138 @@
 </head>
 
 <body class="flexbox bg-gradient-to-r from-blue-400 to-blue-700">
-    <div class="container p-4 flex justify-center">
-        <div class="w-1/4">
-            <div class="md:h-6/12 flex justify-center flex-col rounded-xl p-4 shadow-xl bg-white">
-                <div class="title-card text-center">
-                    <p>To Do</p>
-                </div>
-                <form id="task-form">
-                    <div class="form-group">
-                        <p class="label">Task Title</p>
-                        <input type="text" id="task-title" class="form-control">
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="min-w-full">
+        <nav class="bg-transparent">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div class="relative flex items-center justify-between h-16">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <!--
+                      Icon when menu is closed.
+          
+                      Heroicon name: outline/menu
+          
+                      Menu open: "hidden", Menu closed: "block"
+                    -->
+                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <!--
+                      Icon when menu is open.
+          
+                      Heroicon name: outline/x
+          
+                      Menu open: "block", Menu closed: "hidden"
+                    -->
+                            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
                     </div>
-
-                    <div class="form-group">
-                        <p class="label">Scheduled Time</p>
-                        <input type="datetime-local" id="time-task" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <p class="label">Priority</p>
-                        <div class="priority-options flexbox">
-                            <div class="first-option">
-                                <input type="radio" id="male" name="gender" value="male">
-                                <label for="male">High</label>
-                            </div>
-                            <div class="second-option">
-                                <input type="radio" id="female" name="gender" value="female">
-                                <label for="female">Normal</label>
-                            </div>
-                            <div class="third-option">
-                                <input type="radio" id="other" name="gender" value="other">
-                                <label for="other">Low</label>
+                    <div class="logo flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
+                        <div class="flex-shrink-0 flex items-center">
+                            <p class="text-2xl cursor-pointer text-white px-3 py-2 rounded-md text-sm font-medium">
+                                Task List</p>
+                        </div>
+                        <div class="hidden sm:block sm:ml-6">
+                            <div class="flex space-x-4">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="javascript: void(0)"
+                                    class="text-base text-white hover:bg-white hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                                    id="btn-create-task">Create
+                                    Task</a>
+                                <a href="javascript: void(0)"
+                                    class="text-base text-white hover:bg-white hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                                    id="btn-list-tasks">List</a>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <p class="label">Description</p>
-                        <textarea id="task-description" rows="3" class="form-control"></textarea>
-                    </div>
-                    <div class="send-task w-full flex justify-center">
-                        <button type="submit" class="btn-send" id="btnSave">Save</button>
-                    </div>
-
-                </form>
-
+                </div>
             </div>
-        </div>
 
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#"
+                        class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+                    <a href="#"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+                    <a href="#"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                    <a href="#"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container p-4 flex justify-center">
+            <div class="md:w-8/12 sm:w-10/12 lg:w-4/12">
+                <div class="md:h-6/12 flex justify-center flex-col rounded-xl p-4 shadow-xl bg-white"
+                    id="tasks-container">
+                    <div class="title-card text-center">
+                        <p>To Do</p>
+                    </div>
+                    <form id="task-form">
+                        <div class="form-group">
+                            <p class="label text-blue-600">Task Title</p>
+                            <input type="text" id="task-title"
+                                class="form-control w-full p-2 mb-6 text-black border-b-2 border-blue-500 outline-none focus:bg-gray-300">
+                        </div>
+
+                        <div class="form-group">
+                            <p class="block mb-2 text-blue-600">Scheduled Time</p>
+                            <input type="datetime-local" id="time-task"
+                                class="form-control w-full p-2 mb-6 text-black border-b-2 border-blue-500 outline-none focus:bg-gray-300">
+                        </div>
+                        <div class="form-group priority">
+                            <fieldset>
+                                <legend class="text-blue-600">
+                                    Priority
+                                </legend>
+
+                                <div class="priority-options flex justify-around">
+                                    <div class="first-option flexbox flex-col items-stretch">
+                                        <input type="radio" id="male" name="gender" class="w-7 self-center"
+                                            value="male">
+                                        <label for="male" class="text-center mt-2 text-blue-600">High</label>
+                                    </div>
+                                    <div class="second-option flexbox flex-col items-stretch">
+                                        <input type="radio" id="female" class="w-7 self-center" name="gender"
+                                            value="female">
+                                        <label for="female" class="text-center mt-2 text-blue-600">Normal</label>
+                                    </div>
+                                    <div class="third-option flexbox flex-col items-stretch">
+                                        <input type="radio" id="other" class="w-7 self-center" name="gender"
+                                            value="other">
+                                        <label for="other" class="text-center mt-2 text-blue-600">Low</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="form-group">
+                            <p class="label text-blue-600">Description</p>
+                            <textarea id="task-description" rows="3"
+                                class="form-control w-full p-2 mb-6 text-black border-b-2 border-blue-500 outline-none focus:bg-gray-300"></textarea>
+                        </div>
+                        <div class="send-task w-full flex justify-center">
+                            <button type="submit" class="btn-send" id="btnSave">Save</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -63,7 +149,7 @@
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
